@@ -1,4 +1,3 @@
-
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
@@ -53,6 +52,20 @@ router.post("/complete", async (req, res) => {
   } catch (err) {
     console.error("Quest complete error:", err);
     res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
+// ✅ DELETE user quest by Mongo ID
+router.delete("/user/:mongoId", async (req, res) => {
+  const mongoId = req.params.mongoId;
+  try {
+    const deleted = await Quest.findByIdAndDelete(mongoId);
+    if (!deleted) {
+      return res.status(404).json({ success: false, message: "Quest not found." });
+    }
+    res.status(200).json({ success: true, message: "Quest deleted." });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "Deletion error." });
   }
 });
 
