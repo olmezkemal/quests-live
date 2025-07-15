@@ -1,0 +1,21 @@
+
+{
+  "daily-login": {
+    "title": "Daily Login",
+    "reward": 25,
+    "type": "daily",
+    "description": "Earn rewards by logging in every day."
+  },
+  "twitter-follow": {
+    "title": "Follow on Twitter",
+    "reward": 50,
+    "type": "social",
+    "description": "Follow the @filmcinecoin account on Twitter."
+  },
+  "submit-film": {
+    "title": "Submit a Film Idea",
+    "reward": 500,
+    "type": "creative",
+    "description": "Submit a creative film idea and get support."
+  }
+}
