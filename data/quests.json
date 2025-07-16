@@ -1,38 +1,37 @@
-{
-  "daily-login": {
+[
+  {
+    "id": "daily-login",
     "title": "Daily Login",
     "reward": 25,
     "type": "daily",
-    "description": "Earn rewards by logging in every day."
+    "description": "Log in daily to earn rewards and maintain your streak."
   },
-  "twitter-follow": {
+  {
+    "id": "twitter-follow",
     "title": "Follow on Twitter",
     "reward": 1000,
     "type": "social",
-    "description": "Follow @filmcinecoin on Twitter."
+    "description": "Support FilmCineCoin by following our Twitter account @filmcinecoin."
   },
-  "nft-purchase": {
-    "title": "Buy an NFT",
+  {
+    "id": "buy-nft",
+    "title": "Buy a FilmCC NFT",
     "reward": 50,
-    "type": "ecosystem",
-    "description": "Purchase any NFT from the FilmCC Marketplace."
+    "type": "market",
+    "description": "Buy any NFT in the FilmCC ecosystem to claim this reward."
   },
-  "stake": {
-    "title": "Stake FilmCC",
+  {
+    "id": "stake-filmcc",
+    "title": "Stake FilmCC Tokens",
     "reward": 50,
-    "type": "ecosystem",
-    "description": "Stake your FilmCC tokens and start earning PASS."
+    "type": "stake",
+    "description": "Stake your FilmCC tokens and earn passive PASS rewards."
   },
-  "submit-idea": {
+  {
+    "id": "submit-film-idea",
     "title": "Submit a Film Idea",
     "reward": 1000,
     "type": "creative",
-    "description": "Share your film idea and get support from the community."
-  },
-  "youtube-sub": {
-    "title": "Subscribe on YouTube",
-    "reward": 1000,
-    "type": "social",
-    "description": "Subscribe to our official YouTube channel."
+    "description": "Submit a creative film idea and get ecosystem support."
   }
-}
+]
