@@ -1,38 +1,29 @@
-{
+const quests = {
   "daily-login": {
-    "title": "Daily Login",
-    "reward": 25,
-    "type": "daily",
-    "description": "Earn 25 PASS every day just by visiting the site."
+    title: "Daily Login",
+    description: "Log in daily to receive your reward.",
+    reward: 25
   },
-  "follow-twitter": {
-    "title": "Follow on Twitter",
-    "reward": 1000,
-    "type": "social",
-    "description": "Follow @filmcinecoin on Twitter and support our growing community."
-  },
-  "subscribe-youtube": {
-    "title": "Subscribe to YouTube",
-    "reward": 1000,
-    "type": "social",
-    "description": "Subscribe to our official YouTube channel and stay updated with new releases."
+  "twitter-follow": {
+    title: "Follow on Twitter",
+    description: "Follow our Twitter account to stay updated.",
+    reward: 1000
   },
   "buy-nft": {
-    "title": "Buy an NFT",
-    "reward": 50,
-    "type": "ecosystem",
-    "description": "Buy any NFT from the marketplace and receive rewards."
+    title: "Buy an NFT",
+    description: "Purchase any NFT from our marketplace.",
+    reward: 1500
   },
   "stake-filmcc": {
-    "title": "Stake FilmCC",
-    "reward": 50,
-    "type": "ecosystem",
-    "description": "Stake your FilmCC tokens and earn extra PASS."
+    title: "Stake FILMCC",
+    description: "Stake your FILMCC tokens and earn rewards.",
+    reward: 750
   },
   "submit-film-idea": {
-    "title": "Submit a Film Idea",
-    "reward": 1000,
-    "type": "creative",
-    "description": "Share your film idea and be part of the next funded project."
+    title: "Submit Film Idea",
+    description: "Share your film concept with the community.",
+    reward: 500
   }
-}
+};
+
+module.exports = quests;
