@@ -4,17 +4,17 @@ const fs = require("fs");
 const path = require("path");
 const Quest = require("../models/Quest");
 
-// Load quests
+// JSON görev verilerini yükle
 const questsData = JSON.parse(
   fs.readFileSync(path.join(__dirname, "../data/quests.json"), "utf-8")
 );
 
-// GET all quests
+// 📌 Tüm görevleri getir
 router.get("/list", (req, res) => {
   res.json(questsData);
 });
 
-// GET user quests
+// 📌 Kullanıcının tamamladığı görevleri getir
 router.get("/user/:userId", async (req, res) => {
   const userId = req.params.userId;
   try {
@@ -27,10 +27,11 @@ router.get("/user/:userId", async (req, res) => {
   }
 });
 
-// POST complete quest
+// 📌 Görev tamamlandığında çağrılacak
 router.post("/complete", async (req, res) => {
   const { userId, questId } = req.body;
   const quest = questsData[questId];
+
   if (!quest) {
     return res.status(400).json({ success: false, message: "Invalid quest." });
   }
@@ -46,8 +47,8 @@ router.post("/complete", async (req, res) => {
       questId,
       reward: quest.reward
     });
-    await newQuest.save();
 
+    await newQuest.save();
     res.status(200).json({ success: true, reward: quest.reward });
   } catch (err) {
     console.error("Quest complete error:", err);
@@ -55,7 +56,7 @@ router.post("/complete", async (req, res) => {
   }
 });
 
-// ✅ DELETE user quest by Mongo ID
+// 📌 Belirli bir kullanıcı görevi MongoDB ObjectId ile sil
 router.delete("/user/:mongoId", async (req, res) => {
   const mongoId = req.params.mongoId;
   try {
