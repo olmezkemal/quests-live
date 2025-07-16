@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const Quest = require("../models/Quest");
 
-// JSON görev verilerini yükle
+// JSON görev verilerini yükle (dizi olarak)
 const questsData = JSON.parse(
   fs.readFileSync(path.join(__dirname, "../data/quests.json"), "utf-8")
 );
@@ -27,10 +27,12 @@ router.get("/user/:userId", async (req, res) => {
   }
 });
 
-// 📌 Görev tamamlandığında çağrılacak
+// ✅ 📌 Görev tamamlandığında çağrılacak (düzenlenmiş versiyon)
 router.post("/complete", async (req, res) => {
   const { userId, questId } = req.body;
-  const quest = questsData[questId];
+
+  // ❗️Bu kısım düzeltildi – artık diziden doğru şekilde arıyor
+  const quest = questsData.find(q => q.id === questId);
 
   if (!quest) {
     return res.status(400).json({ success: false, message: "Invalid quest." });
